@@ -18,15 +18,15 @@ $('.nav-link').click(scroll);
 })
 //Game
 var passwords = new Array(5);
-passwords[0] = "Polak nie kaktus";
-passwords[1] = "Kobyła ma mały bok";
+passwords[0] = "Polacy nie gęsi";
+passwords[1] = "co nagle to po diable";
 passwords[2] = "Wyjątek potwierdza regułę";
 passwords[3] = "Dziadek do orzechów";
-passwords[4] = "Bileciki do kontroli";
+passwords[4] = "fortuna kołem się toczy";
 
 function draw()
 {
-let draw_number = Math.round(Math.random() * passwords.length);
+let draw_number = Math.round(Math.random() % passwords.length-1);
 return passwords[draw_number];
 }
 
@@ -49,8 +49,8 @@ for (i=0 ;i<pass_lenght;i++)
 }
 
 
-function write_password(){
-    document.getElementById("fild").innerHTML = password1;
+function write_password(pass){
+    document.getElementById("fild").innerHTML = pass;
 }
 window.onload = start;
 
@@ -111,7 +111,7 @@ function start(){
     document.getElementById("alphabet").innerHTML=alphabet_content;
     
 
-    write_password();
+    write_password(password1);
 }
 
 String.prototype.changeChar = function(place, mark){
@@ -141,7 +141,7 @@ function check (number){
 		document.getElementById(element).style.border = "3px solid #00C000";
 		document.getElementById(element).style.cursor = "default";	
 
-        write_password();
+        write_password(password1);
     }
     else{
         let element= "l" + number;
@@ -158,9 +158,11 @@ function check (number){
     }
 
     if(password == password1){
-        document.getElementById("alphabet").innerHTML  = "Wygrałeś"+haslo+'<br /><br /><span class="reset" onclick="location.reload()">Zagraj jeszcze raz</span>';
+        document.getElementById("alphabet").innerHTML  = '<span class="win" onclick="location.reload()">Wygrałeś</span>';
     }
-    if (fails>=9)
-	document.getElementById("alphabet").innerHTML  = "Przegrana! Prawidłowe hasło: "+haslo+'<br /><br /><span class="reset" onclick="location.reload()">JESZCZE RAZ?</span>';
+    if (fails>=9){
+    document.getElementById("alphabet").innerHTML  = '<span class="lose" onclick="location.reload()">Przegrałeś</span><br/>';
+    write_password(password);
+    }
 
 }
