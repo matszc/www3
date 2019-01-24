@@ -96,6 +96,96 @@ figure {
     transform: translateZ(0);
     will-change: transform;
 }
+#game-conteiner{
+    width:900px;
+    margin:auto;
+}
+#fild{
+    width:900px;
+    margin: 50px auto;
+    text-align: center;
+    font-size:48px;
+    min-height: 60px;
+}
+#gallows{
+    float: left;
+    width:450px;
+    text-align: center;
+    min-height: 280px;
+}
+#alphabet{
+    float:left;
+    width:450px;
+    text-align: center;
+    min-height: 280px;
+}
+
+/* #pojemnik
+{
+	width:900px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#plansza
+{
+	width: 900px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	text-align: center;
+	font-size: 48px;
+	min-height: 60px;
+}
+
+#szubienica
+{
+	float: left; 
+	width: 450px;
+	text-align: center;
+	min-height: 280px;
+}
+
+#alfabet
+{
+	float: left; 
+	width: 450px;
+	text-align: center;
+	min-height: 280px;
+} */
+
+.letter
+{
+	width: 30px;
+	height: 30px;
+	text-align:center;
+	padding: 5px;
+	margin: 5px;
+	border: 3px solid gray;
+	float: left;
+	cursor: pointer;
+	border-radius: 15px;
+}
+
+.letter:hover
+{
+	background-color: #222222;
+	color: white;
+	border: 3px solid white;
+}
+
+.reset
+{
+	color:green;
+	cursor: pointer;
+	font-size: 48px;
+}
+
+.reset:hover
+{
+	color:white;
+}
+
+
 .card-img-top{
     max-height:333px;
 }
